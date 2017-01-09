@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+    image: postgres:9.6.0
+    environment:
+      POSTGRES_USER: "man"
+      POSTGRES_PASSWORD: "shade"
+      POSTGRES_DB: 'theone'
+    ports:
+      - '5432:5432'
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.local
+    env_file: '.env'
+    command: yarn run start
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules

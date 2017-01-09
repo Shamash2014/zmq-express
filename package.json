@@ -1,0 +1,13 @@
+{
+  "name": "koodaa3",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Roman Myronov",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/main.js"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

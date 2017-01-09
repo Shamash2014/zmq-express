@@ -1,0 +1,10 @@
+FROM node:7.4.0-alpine
+
+MAINTAINER Roman Myronov "roman.myronov@syndicode.co"
+USER root
+
+RUN npm install -g yarn
+WORKDIR /app
+COPY package.json yarn.lock /app/
+RUN yarn
+COPY . /app
